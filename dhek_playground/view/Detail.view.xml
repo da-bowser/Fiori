@@ -1,0 +1,83 @@
+<mvc:View xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" controllerName="dk.dhek.fiori.view.Detail">
+    <Page id="detailPage" navButtonPress="onNavBack" title="{i18n&gt;detailTitle}" showNavButton="{device&gt;/isPhone}">
+        <content>
+            <ObjectHeader id="detailHeader" title="{UserCreate}" number="{Component}" numberUnit="{MainObjkey}" introActive="false" titleActive="false" iconActive="false">
+                <attributes id="detailAttributes">                
+                    <ObjectAttribute id="attribute" text="{i18n&gt;detailText}" active="false">
+                    </ObjectAttribute>
+                </attributes>
+                <firstStatus id="detailStatus">
+                    <ObjectStatus id="status" text="{ErrorCategory}">
+                    </ObjectStatus>
+                </firstStatus>
+            </ObjectHeader>
+            <IconTabBar id="idIconTabBar" expanded="{device&gt;/isNoPhone}" select="handleIconTabBarSelect">
+    			<items id="detailsItems">
+                    <IconTabFilter id="iconTabFilter1" key="keyMainTab" icon="sap-icon://hint" text="Main">
+                        <content>
+							<f:SimpleForm id="iconTabFilter1form" minWidth="1024" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1">
+								<f:content>
+								
+									<Label id="orderIdLabel" text="OrderId">
+									</Label>
+									<Text id="orderIdText" text="{OrderId}" maxLines="0">
+									</Text>
+									
+									<Label id="label2" text="CreationDate">
+									</Label>
+									<Text id="text2" text="{CreationDate}" maxLines="0">
+									</Text>
+									
+									<Label id="label3" text="CreationTime">
+									</Label>
+									<Text id="text3" text="{CreationTime}" maxLines="0">
+									</Text>
+									
+									<core:ExtensionPoint name="extIconTabFilterForm1"/>
+								</f:content>
+							</f:SimpleForm>
+                        </content>
+                    </IconTabFilter>
+                    <IconTabFilter id="iconTabFilter2" key="keySomethingTab" icon="sap-icon://enter-more" text="Something">
+                        <content>
+							<f:SimpleForm id="iconTabFilter2form" minWidth="1024" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1">
+								<f:content>
+									<Label id="label4" text="">
+									</Label>
+									<Text id="text4" text="" maxLines="0">
+									</Text>
+									<Label id="label5" text="">
+									</Label>
+									<Text id="text5" text="" maxLines="0">
+									</Text>
+									<Label id="label6" text="">
+									</Label>
+									<Text id="text6" text="" maxLines="0">
+									</Text>
+									<core:ExtensionPoint name="extIconTabFilterForm2"/>
+								</f:content>
+							</f:SimpleForm>
+                        </content>
+                    </IconTabFilter>
+                    <IconTabFilter text="Show payload" count="" icon="sap-icon://attachment-text-file" iconColor="Default" id="__filter5" key="keyPayloadTab">
+                        <content>
+                            <TextArea wrapping="Soft" id="payloadTextArea" width="100%" editable="false" value="default value"/>
+                        </content>
+                    </IconTabFilter>
+    				<core:ExtensionPoint name="extIconTabFilter"/>
+                </items>
+            </IconTabBar>
+    		<core:ExtensionPoint name="extDetail"/>
+        </content>
+        <footer id="detailFooter">
+            <Toolbar id="detailToolbar">
+                <content>
+                    <ToolbarSpacer id="toolbarSpacer">
+                    </ToolbarSpacer>
+                    <Button id="actionButton" press="openActionSheet" icon="sap-icon://action">
+                    </Button>
+                </content>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

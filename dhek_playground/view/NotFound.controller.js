@@ -1,0 +1,1 @@
+sap.ui.core.mvc.Controller.extend("dk.dhek.fiori.view.NotFound", {});
